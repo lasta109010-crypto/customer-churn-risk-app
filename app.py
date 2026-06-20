@@ -2,9 +2,7 @@ import streamlit as st
 import pandas as pd
 import joblib
 
-model = joblib.load(
-    customer_churn_risk_model.pkl"
-)
+model = joblib.load("customer_churn_risk_model.pkl")
 
 st.set_page_config(
     page_title="AI Customer Churn Risk Assessment",
