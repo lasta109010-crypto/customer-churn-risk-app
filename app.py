@@ -79,16 +79,20 @@ if st.button("prediction"):
 
     st.subheader("Assesment Result")
 
-    prediction = model.predict(input_data)
+    probability = model.predict_proba(input_data)[0][1]
 
-    if prediction[0] == 1:
-        st.error("Higher churn risk")
+    st.write(f"Churn Probability: {probability:.2%}")
+    
+    if probability >= 0.70:
+        st.error("High Churn Risk")
         st.caption("This assessment is based on historical customer behavior patterns.")
         
-    else:
-        st.success("lower churn ris")
+    elif probability >= 0.40:
+        st.warning("Moderate Churn Risk")
         st.caption("This assessment is based on historical customer behavior patterns.")
-    
+    else:
+        st.success("Low Churn Risk")
+        st.caption("This assessment is based on historical customer behavior patterns.")
 
 
 
