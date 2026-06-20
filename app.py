@@ -3,7 +3,7 @@ import pandas as pd
 import joblib
 
 model = joblib.load(
-    r"C:\Users\DELL 3070\OneDrive\Desktop\Churn\customer_churn_risk_model.pkl"
+    customer_churn_risk_model.pkl"
 )
 
 st.set_page_config(
